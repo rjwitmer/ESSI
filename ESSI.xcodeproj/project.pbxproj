@@ -8,33 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		CCA3DB352E5E22A500515C92 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = CCA3DB342E5E22A500515C92 /* RealityKitContent */; };
+		CCA3DB482E5E233300515C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA3DB432E5E233300515C92 /* Assets.xcassets */; };
+		CCA3DB4A2E5E233300515C92 /* ESSIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3DB442E5E233300515C92 /* ESSIApp.swift */; };
+		CCA3DB4B2E5E233300515C92 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3DB462E5E233300515C92 /* LaunchView.swift */; };
+		CCA3DB4D2E5E23CC00515C92 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3DB4C2E5E23CC00515C92 /* Snack.swift */; };
+		CCA3DB512E5E3A5C00515C92 /* SnackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3DB502E5E3A5C00515C92 /* SnackDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CCA3DB2F2E5E22A500515C92 /* ESSI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESSI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA3DB332E5E22A500515C92 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		CCA3DB432E5E233300515C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCA3DB442E5E233300515C92 /* ESSIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESSIApp.swift; sourceTree = "<group>"; };
+		CCA3DB452E5E233300515C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCA3DB462E5E233300515C92 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		CCA3DB4C2E5E23CC00515C92 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		CCA3DB502E5E3A5C00515C92 /* SnackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CCA3DB3D2E5E22A600515C92 /* Exceptions for "ESSI" folder in "ESSI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = CCA3DB2E2E5E22A500515C92 /* ESSI */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CCA3DB312E5E22A500515C92 /* ESSI */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CCA3DB3D2E5E22A600515C92 /* Exceptions for "ESSI" folder in "ESSI" target */,
-			);
-			path = ESSI;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CCA3DB2C2E5E22A500515C92 /* Frameworks */ = {
@@ -51,7 +41,7 @@
 		CCA3DB262E5E22A500515C92 = {
 			isa = PBXGroup;
 			children = (
-				CCA3DB312E5E22A500515C92 /* ESSI */,
+				CCA3DB472E5E233300515C92 /* ESSI */,
 				CCA3DB322E5E22A500515C92 /* Packages */,
 				CCA3DB302E5E22A500515C92 /* Products */,
 			);
@@ -73,6 +63,35 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		CCA3DB472E5E233300515C92 /* ESSI */ = {
+			isa = PBXGroup;
+			children = (
+				CCA3DB432E5E233300515C92 /* Assets.xcassets */,
+				CCA3DB442E5E233300515C92 /* ESSIApp.swift */,
+				CCA3DB452E5E233300515C92 /* Info.plist */,
+				CCA3DB4F2E5E287200515C92 /* Views */,
+				CCA3DB4E2E5E285400515C92 /* Models */,
+			);
+			path = ESSI;
+			sourceTree = "<group>";
+		};
+		CCA3DB4E2E5E285400515C92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCA3DB4C2E5E23CC00515C92 /* Snack.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCA3DB4F2E5E287200515C92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCA3DB462E5E233300515C92 /* LaunchView.swift */,
+				CCA3DB502E5E3A5C00515C92 /* SnackDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,9 +106,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CCA3DB312E5E22A500515C92 /* ESSI */,
 			);
 			name = ESSI;
 			packageProductDependencies = (
@@ -138,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA3DB482E5E233300515C92 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA3DB4D2E5E23CC00515C92 /* Snack.swift in Sources */,
+				CCA3DB4A2E5E233300515C92 /* ESSIApp.swift in Sources */,
+				CCA3DB512E5E3A5C00515C92 /* SnackDetailView.swift in Sources */,
+				CCA3DB4B2E5E233300515C92 /* LaunchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
