@@ -9,13 +9,32 @@ import SwiftUI
 import SwiftData
 
 struct SnackDetailView: View {
+    
+    enum ComfortLevel: Int, CaseIterable {
+        case doesTheJob = 1
+        case solid
+        case cravingSatisfier
+        case gourmet
+        case emergencyComfort
+        
+        var label: String {
+            switch self {
+            case .doesTheJob: return "✅ Does the job"
+            case .solid: return "👍 Solid"
+            case .cravingSatisfier: return "😋 Craving met"
+            case .gourmet: return "👨‍🍳 Gourmet"
+            case .emergencyComfort: return "🚨 Emergency"
+            }
+        }
+    }
+    
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) private var dismiss
     @State var snack: Snack
     @State private var name: String = ""
     @State private var onHand: Int = 0
     @State private var notes: String = ""
-    @State private var comfortLevel: Int = 0
+    @State private var selectedComfortLevel: Int = 1
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,6 +49,19 @@ struct SnackDetailView: View {
                     .padding(.trailing)
             }
             .padding(.bottom)
+            
+            HStack {
+                Text("Comfort Level: ")
+                    .bold()
+                Picker("", selection: $selectedComfortLevel) {
+                    ForEach(ComfortLevel.allCases, id: \.self) { comfortLevel in
+                        Text(comfortLevel.label)
+                            .tag(comfortLevel.rawValue)
+                    }
+                }
+            }
+            .padding(.bottom)
+            
             Text("Notes:")
             TextField("notes", text: $notes, axis: .vertical)
                 .bold()
@@ -43,7 +75,7 @@ struct SnackDetailView: View {
             name = snack.name
             onHand = snack.onHand
             notes = snack.notes
-            comfortLevel = snack.comfortLevel
+            selectedComfortLevel = snack.comfortLevel
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -58,7 +90,7 @@ struct SnackDetailView: View {
                     snack.name = name
                     snack.onHand = onHand
                     snack.notes = notes
-                    snack.comfortLevel = comfortLevel
+                    snack.comfortLevel = selectedComfortLevel
                     // Save the data to SwiftData modelContext
                     modelContext.insert(snack)  // Will add new or update existing
                     // Save the data to SwiftData data store

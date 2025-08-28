@@ -36,6 +36,15 @@ struct LaunchView: View {
                             .font(.body)
                         }
                     }
+                    .swipeActions {
+                        Button("Delete", role: .destructive) {
+                            modelContext.delete(snack)
+                            guard let _ = try? modelContext.save() else {
+                                print("😡 ERROR: Swipe to delete failed to save changes")
+                                return
+                            }
+                        }
+                    }
                 }
             }
             .listStyle(.automatic)
